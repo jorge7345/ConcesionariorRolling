@@ -1,0 +1,82 @@
+body {
+    justify-content: center;  /* Alineación horizontal */
+    align-items: center;      /* Alineación vertical */
+    background-color: #f7f3f6;
+}
+
+#nav {
+    color: goldenrod;
+ }
+ 
+ nav {
+    flex-wrap: wrap;
+ }
+ 
+ #nav:hover {
+    color: white;
+ }
+ 
+ .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='goldenrod' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+ }
+ 
+ #img {
+
+   width: 80px;
+   height: auto;
+   align-content: center;
+}
+ 
+ #navcenter {
+    justify-content: end;
+ }
+ 
+ #butons {
+    display: flex;
+ 
+ }
+ 
+ .btn {
+    font-weight: bold;
+    width: 140px;
+    font-size: 1em;
+ 
+ }
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+.formulario {
+    width: 100;
+}
+
+aside{
+    float: left;
+    background-color:white;
+    height: auto;
+    margin: 30px;
+    padding: 30px;
+}
+
+#tarjetas{
+   padding: 5%;
+}
+
+footer{
+   background-color: black;
+}
+
+footer {
+   background-color: black;
+   color: white;
+   padding: 1%;
+   display: flex;
+   justify-content: space-around;
+ }
+ 
+ .logofooter {
+   width: 120px;
+   height: 120px;
+ }

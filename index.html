@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet"> <!-- llamar a slide doble -->
+    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script> <!-- llamar a slide doble -->
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Venta de autos</title>
+</head>
+<body>
+
+    <header>
+        
+        <nav class="navbar navbar-expand-lg bg-black p-3">
+            <div class="container-fluid">
+   
+                <div>
+                    <a href=""><img src="./img/logo.png" alt="logo" id="img"></a>
+                 </div>
+
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+   
+               <div class="collapse navbar-collapse" id="navcenter">
+                  <a class="navbar-brand" href="https://eidosdesarrolloweb.com/wp-content/uploads/2019/10/Error404.jpg" id="nav">¿como funciona?</a>
+                  <a class="navbar-brand" href="https://eidosdesarrolloweb.com/wp-content/uploads/2019/10/Error404.jpg" id="nav">inspección</a>
+                  <a class="navbar-brand" href="https://eidosdesarrolloweb.com/wp-content/uploads/2019/10/Error404.jpg" id="nav">financiación</a>
+                  <a class="navbar-brand" href="https://eidosdesarrolloweb.com/wp-content/uploads/2019/10/Error404.jpg" id="nav">canal de denuncias</a>
+                  <a class="navbar-brand" href="https://eidosdesarrolloweb.com/wp-content/uploads/2019/10/Error404.jpg" id="nav">contacto</a>
+   
+                  <div id="butons" class="gap-3">
+                     <button type="button" class="btn btn-warning rounded-pill">COMPRA</button>
+                     <button type="button" class="btn btn-warning rounded-pill">VENDE</button>
+                  </div>
+               </div>
+            </div>
+   
+         </nav>
+   
+
+
+    </header>
+
+<main>
+
+    <div> <!-- Formulario -->
+    <!-- aside LEFT FORM -->
+    <section id="formulario">
+        <aside>
+          <div>
+            <label for="customRange1" class="form-label5">Ordenar por</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Ordenar por</option>
+            <option value="1">Mayor precio</option>
+            <option value="2">Menor precio</option>
+            <option value="3">Mas nuevos</option>
+            <option value="4">Mas antiguos</option>
+            <option value="5">Mayor kilometraje</option>
+            <option value="6">Menor kilometraje</option>
+          </select>
+        </div>
+
+        <br>
+
+          <div>
+            <fieldset>Tipos de vehiculos</fieldset>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="checkboxNoLabel"
+              value="option1"
+              aria-label="..."
+            />
+            <label class="form-check-label" for="inlineRadio1">Autos</label>
+          </div>
+          <div>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="checkboxNoLabel"
+              value="option2"
+              aria-label="..."
+            />
+            <label class="form-check-label" for="inlineRadio2">Motos</label>
+          </div>
+
+          <br>
+
+          <div>  
+
+          <label for="customRange1" class="form-label">Precio</label> 
+
+          </div>
+          
+          <div id="price-slider"></div><!-- Slider doble -->
+
+          <p>Rango seleccionado: <span id="price-output"></span></p>
+
+          <script>
+              var slider = document.getElementById('price-slider');
+  
+              noUiSlider.create(slider, {
+                  start: [100, 500], // Valores iniciales del rango
+                  connect: true,
+                  range: {
+                      'min': 0,
+                      'max': 1000
+                  },
+                  step: 50
+              });
+  
+              var priceOutput = document.getElementById('price-output');
+              slider.noUiSlider.on('update', function(values, handle) {
+                  priceOutput.innerHTML = "$" + values.join(' - $');
+              });
+          </script>
+          
+          <button type="button" class="btn btn-primary">Reiniciar</button>
+          
+          <br>
+          <br>
+
+          <label for="customRange1" class="form-label">Kilometros</label>         
+    
+          <div id="kilometros-slider"></div><!-- Slider doble -->
+
+          <p>Rango seleccionado: <span id="kilomoetros-output"></span></p>
+
+          <script>
+            var slider2 = document.getElementById('kilometros-slider');
+        
+            noUiSlider.create(slider2, {
+                start: [100, 500], // Valores iniciales del rango
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 1000
+                },
+                step: 50
+            });
+        
+            var kilometrosOutput = document.getElementById('kilometros-output');
+            slider2.noUiSlider.on('update', function(values, handle) {
+                kilometrosOutput.innerHTML = "" + values.join(' - ');
+            });
+        </script>
+        
+          <button type="button" class="btn btn-primary">Reiniciar</button>
+
+        <div>
+            <input class="form-check-input"type="checkbox" id="checkboxNoLabel" value="option1" aria-label="..."/>
+            <label class="form-check-label" for="inlineRadio1">Autos</label>
+        </div>
+
+        <div>
+            <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="option2" aria-label="..."/>
+            <label class="form-check-label" for="inlineRadio2">Motos</label>
+    
+            <br>
+            
+            <label for="customRange1" class="form-label5">Marca</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Todos</option>
+              <option value="1">Cruze</option>
+              <option value="2">Cronos</option>
+              <option value="3">Eco Sport</option>
+              <option value="4">Etios</option>
+              <option value="5">Jeep Renegade</option>
+              <option value="6">Taos</option>
+            </select>
+
+          <label for="customRange1" class="form-label5">Combustible</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Todos</option>
+            <option>Nafta</option>
+            <option>Gasoil</option>
+          </select>
+          <label for="customRange1" class="form-label5">Transmisión</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Todas</option>
+            <option value="1">Automatica</option>
+            <option value="2">Manual</option>
+          </select>
+          
+        </aside>
+    </section>
+
+    </div>
+
+    <div id="tarjetas">
+
+    <section class="d-flex justify-content-evenly"> <!-- tarjetas -->
+    
+    <div class="container text-center">
+        <div class="row">
+        <div class="col">
+              
+            <div class="card mb-5 shadow" style="width: 18rem;">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0492-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                <div class="card-body">
+                <p></p>
+                <h5 class="card-title">Mustang</h5>
+                <p></p>
+                <p>Diablo</p>
+                <p>Automatico</p>
+                <p>300.000 Km</p>
+                </div>
+
+                <div class="card-body">
+                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Comprar
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Mustang - Diablo</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Excelente auto chango!
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+            <div class="card mb-5 shadow" style="width: 18rem;">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0453-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                <div class="card-body">
+                <p></p>
+                <h5 class="card-title">BMW</h5>
+                <p></p>
+                <p>Vento</p>
+                <p>Manual</p>
+                <p>10.000 Km</p>
+                </div>
+
+
+                <div class="card-body">
+                    
+                        <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Comprar
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">BMW - Vento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Excelente auto chango!
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+            <div class="card mb-5 shadow" style="width: 18rem;">
+                <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0650-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                <div class="card-body">
+                <p></p>
+                <h5 class="card-title">Lamborghini</h5>
+                <p></p>
+                <p>Onix</p>
+                <p>Automatica</p>
+                <p>200.000 Km</p>
+                </div>
+
+                <div class="card-body">
+                
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Comprar
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lamborghini - Onix</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        Excelente auto chango!
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+  
+                </div>
+            </div>
+    
+        </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                  
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0510-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">Mustang</h5>
+                    <p></p>
+                    <p>Diablo</p>
+                    <p>Automatico</p>
+                    <p>300.000 Km</p>
+                    </div>
+    
+                    <div class="card-body">
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Comprar
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Mustang - Diablo</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                Excelente auto chango!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col">
+    
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0393-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">BMW</h5>
+                    <p></p>
+                    <p>Vento</p>
+                    <p>Manual</p>
+                    <p>10.000 Km</p>
+                    </div>
+    
+    
+                    <div class="card-body">
+                        
+                            <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Comprar
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">BMW - Vento</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                Excelente auto chango!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col">
+    
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0335-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">Lamborghini</h5>
+                    <p></p>
+                    <p>Onix</p>
+                    <p>Automatica</p>
+                    <p>200.000 Km</p>
+                    </div>
+    
+                    <div class="card-body">
+                    
+    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Comprar
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Lamborghini - Onix</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Excelente auto chango!
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+      
+      
+                    </div>
+                </div>
+        
+            </div>
+    
+        </div>
+
+        <div class="row">
+            <div class="col">
+                  
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0185-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">Mustang</h5>
+                    <p></p>
+                    <p>Diablo</p>
+                    <p>Automatico</p>
+                    <p>300.000 Km</p>
+                    </div>
+    
+                    <div class="card-body">
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Comprar
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Mustang - Diablo</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                Excelente auto chango!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col">
+    
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0128-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">BMW</h5>
+                    <p></p>
+                    <p>Vento</p>
+                    <p>Manual</p>
+                    <p>10.000 Km</p>
+                    </div>
+    
+    
+                    <div class="card-body">
+                        
+                            <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Comprar
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">BMW - Vento</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                Excelente auto chango!
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col">
+    
+                <div class="card mb-5 shadow" style="width: 18rem;">
+                    <img src="https://maipuusados.com.ar/wp-content/uploads/sites/5/2024/10/APC_0033-1600x1200-1-jpg.avif" class="card-img-top" alt="foto personal">
+                    <div class="card-body">
+                    <p></p>
+                    <h5 class="card-title">Lamborghini</h5>
+                    <p></p>
+                    <p>Onix</p>
+                    <p>Automatica</p>
+                    <p>200.000 Km</p>
+                    </div>
+    
+                    <div class="card-body">
+                    
+    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary rounded-pill btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Comprar
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Lamborghini - Onix</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Excelente auto chango!
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+      
+      
+                    </div>
+                </div>
+        
+            </div>
+    
+            </div>
+    </div>
+
+    </section>
+
+    </div>
+
+</main>
+
+<footer class="bg-black text-white text-center py-3">
+    <section>
+       <h6>DIRECCIÓN</h6>
+       <P>Av. Colón 3950, Córdoba, Argentina.</P>
+
+    </section>
+
+    <section>
+       <h6>CONTACTO</h6>
+       <P>0810-888-62478</P>
+    </section>
+
+    <SEction>
+       <H6>HORARIOS DE ATENCIÓN</H6>
+       <P>Lunes a Viernes: 8:30 a 19:00 hs.</P>
+       <p>Sábados: 9:00 a 13:00hs y 16:00 a 19:00hs</p>
+       <p>Domingos: Cerrado.</p>
+    </SEction>
+
+    <section>
+       <h6>¡SEGUINOS!</h6>
+       <a href="https://www.facebook.com" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+       <a href="https://www.instagram.com" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+       <a href="https://twitter.com" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+       <a href="https://wa.me/" class="text-white mx-2"><i class="fab fa-whatsapp"></i>
+    </section>
+
+    <section>
+       <a href="">
+          <img src="img/logofooter.webp" alt="logofooter" class="logofooter">
+       </a>
+    </section>
+
+</footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>
